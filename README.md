@@ -1,26 +1,26 @@
-# starry项目
+# starry-night
 
-## 本地开发
+## development
 
-- 依赖安装
-  根目录下执行
+- Install packages
 
 ```sh
 $ npm i
 ```
 
-- 本地调试
+- Compile
 
 ```sh
 $ npm run start
 ```
-执行命令后可在控制台输出的端口访问页面
+After executing the command, you can access the page through the port output by the console.
 
-- 构建打包
+- Construct
 
 ```sh
 $ npm run build
 ```
-打包后build目录下的产物直接放入 my-addon/pages/sidebar 下
+After building, the product will be copied to my-addon/pages/sidebar
 
-## EOF
+- Release
+[Release Tutorial](https://docs.qq.com/open/document/addon/addon-cli/download.html)
