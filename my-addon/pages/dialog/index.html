@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://cdn.addon.tencentsuite.com/lib/addon-client-sdk/0.0.12/addon-client-sdk.min.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addon Dialog Demo</title>
+</head>
+<body>
+<button onClick='getInfo()'>获取用户信息</button>
+<button onClick='insertText()'>点击插入文本</button>
+
+</body>
+<script>
+    let user;
+    let addonMetadata;
+    let fileMetadata;
+    function getInfo () {
+        docs.app.run.getUser().then(function (_user) {
+            user = _user;
+        })
+
+        docs.app.run.getFileMetadata().then(function (_fileMetaData) {
+            fileMetadata = _fileMetaData
+        })
+
+        docs.app.run.getAddonMetadata().then(function (_addonMetadata) {
+            addonMetadata = _addonMetadata
+        })
+    }
+
+    function insertText () {
+        docs.app.run.insertText({user,addonMetadata,fileMetadata}).then(function () {
+            console.log('success')
+        })
+    }
+</script>
+</html>
